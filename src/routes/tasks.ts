@@ -104,7 +104,7 @@ taskRouter.delete('/', auth, async (req: AuthRequest, res) =>
         const {taskId}: {taskId: string} = req.body;
         await db.delete(tasks).where(eq(tasks.id, taskId));
     
-        res.status(200).json("task deleted successfully");
+        res.status(200).json("Task deleted successfully");
     }
     catch (error: any)
     {
