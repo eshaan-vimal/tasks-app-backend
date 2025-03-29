@@ -56,7 +56,7 @@ authRouter.post('/signup', async (req: Request<{}, {}, SignupBody>, res) =>
     }
     catch (error: any)
     {
-        res.status(500).json({error: error.message});
+        res.status(500).json({error: "Server Error: Signup failed"});
     }
 });
 
@@ -89,7 +89,7 @@ authRouter.post('/login', async (req: Request<{},{},LoginBody>, res) =>
     }
     catch (error: any)
     {
-        res.status(500).json({error: error.message});
+        res.status(500).json({error: "Server Error: Login failed"});
     }
 });
 
@@ -110,7 +110,7 @@ authRouter.get('/', auth, async (req: AuthRequest, res) =>
     }
     catch (error: any)
     {
-        res.status(500).json({error: error.message});
+        res.status(500).json({error: "Server Error: Authentication failed"});
     }
 });
 
